@@ -1,0 +1,6 @@
+name: CatchBe
+main: com.github.benjibobsmc.cb.Main
+version: 1.0
+authors: [benjibobs, USDA]
+depend: [WorldGuard, WGCustomFlags, Factions, Vault]
+description: A plugin that has a name that is an attempt at wit, but does jack shit
