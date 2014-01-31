@@ -1,5 +1,7 @@
 package benjibobs.cb;
 
+import java.util.HashMap;
+
 import net.citizensnpcs.api.npc.NPC;
 import net.citizensnpcs.api.npc.NPCRegistry;
 
@@ -23,6 +25,8 @@ public class ListenerMain implements Listener{
 		plugin = instance;
 	}
 	
+	public HashMap<String, Boolean> incap = new HashMap<String, Boolean>();
+	
 	@EventHandler
 	public void regCheck(PlayerMoveEvent event){
 		UPlayer fp = UPlayer.get(event.getPlayer());
@@ -32,11 +36,12 @@ public class ListenerMain implements Listener{
 		Player player = event.getPlayer();
 		
 		ApplicableRegionSet regionset = plugin.getWorldGuard().getRegionManager(player.getWorld()).getApplicableRegions(player.getLocation());
-		
-		NPC reg = plugin.getCitizens().getNPCRegistry().getById(regionset.getFlag(plugin.npcid).intValue());
-		
 		if(regionset != null && regionset.allows(plugin.initC)){
-			
+			if(incap.containsKey(event.getPlayer().getName())){
+				
+			}else{
+				incap.put(event.getPlayer().getName(), null);
+			}
 		}
 	}
 	}

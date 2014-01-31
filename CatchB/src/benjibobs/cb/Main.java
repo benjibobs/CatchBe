@@ -14,12 +14,14 @@ public class Main extends JavaPlugin{
 	
 	public StateFlag initC = new StateFlag("conquerable", false);
 	public IntegerFlag npcid = new IntegerFlag("npcID");
+	public IntegerFlag capTime = new IntegerFlag("captureTime");
 	public ListenerMain lm = new ListenerMain(this);
 	
 	@Override
 	public void onEnable() {
 		getWGCustomFlags().addCustomFlag(initC);
 		getWGCustomFlags().addCustomFlag(npcid);
+		getWGCustomFlags().addCustomFlag(capTime);
 		getServer().getPluginManager().registerEvents(lm, this);
 	}
 	
